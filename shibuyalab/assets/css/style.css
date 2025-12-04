@@ -468,13 +468,10 @@ a.nav-link:hover::after {
   }
 }
 
-@media screen and (min-width:768px) and (max-width: 1199.98px) {
+@media screen and (max-width: 1199.98px) {
   #header-nav .navbar-nav li.nav-item {
     padding: 0 1.25em;
   }
-}
-
-@media screen and (max-width: 1199.98px) {
   .logo {
     width: 360px;
   }
@@ -483,7 +480,16 @@ a.nav-link:hover::after {
   }
 }
 
+@media screen and (max-width: 990.98px) {
+  #header-nav .navbar-nav li.nav-item {
+    padding: 0 1em;
+  }
+}
+
 @media screen and (max-width: 767.98px) {
+  #header-nav .navbar-nav li.nav-item {
+    padding: 0 0.5em;
+  }
   .logo {
     width: 320px;
   }
@@ -515,11 +521,14 @@ a.nav-link:hover::after {
     font-size: 0.75em;
   }
   a.nav-link {
-    font-size: 0.875em;
+    font-size: 0.825em;
   }
 }
 	
-@media screen and (max-width: 376.98px) {
+@media screen and (max-width: 385.98px) {
+  #header-nav .navbar-nav li.nav-item {
+    padding: 0 0.5em;
+  }
   .lang-switcher > a,
   a.nav-link {
     font-size: 0.725em;
@@ -715,7 +724,6 @@ a.anchor {
 #main-section ol li {
   margin: 0.25em 0;
   padding-left: 0.5em;
-  text-align: justify;
 }
 
 #main-section ul li {
