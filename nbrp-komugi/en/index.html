@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name="description" content="The NBRP KOMUGI database collects, stores, and provides wheat strains and information.">
+<title>National BioResource Project(NBRP) Pathogenic eukaryotic microorganisms</title>
+
+<!-- Favicons -->
+<link rel="icon" href="../img/favicon.ico" sizes="32x32">
+<link rel="icon" href="../img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<!-- bootstrap --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- fontawesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- CSS -->
+<link href="../css/exsight.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body class="exsight-baseof">
+  <header>
+    <nav class="navbar navbar-expand-xl fixed-top">
+      <div class="container-xl d-flex align-items-center"> 
+        <!-- logo --> 
+        <a class="navbar-brand flex-grow-1 order-1" href="index.html"><img class="logo" src="../img/logo-en.png" alt="National BioResource Project(NBRP) Pathogenic eukaryotic microorganisms" width="" height=""></a> 
+        <!-- inner-head -->
+        <div class="inner-head flex-grow-1 order-2">
+          <div class="d-xl-flex justify-content-end flex-column">
+            <div class="d-flex justify-content-end align-items-center mb-1 gap-2"> 
+              <!-- search-box -->
+              <form class="search-box d-none d-xl-block" action=https://www.google.co.jp/search method=get>
+                <input type="text" name="q" class="search-txt" placeholder="Site search">
+                <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="hidden" name="oe" value="UTF-8">
+                <input type="hidden" name="hl" value="en">
+                <input type="hidden" name="sitesearch" value="shigen.nig.ac.jp/wheat/komugi">
+              </form>
+              <!-- contact --> 
+              <a class="btn btn-outline d-none d-xl-block" href="https://docs.google.com/forms/d/e/1FAIpQLSfupXtY6S6AuwMybT4dt4mohoUu-RVuTVz3tA7Xtj_6B9MGlQ/viewform" target="_blank">Contact us<i class="fa-solid fa-up-right-from-square ps-1"></i></a> 
+              <!-- sns-icon --> 
+              <a class="d-none d-xl-block" href="https://bsky.app/profile/nbrp.bsky.social" target="_blank"><i class="fa-brands fa-bluesky fa-xl our-bluesky-icon"></i></a> 
+              <!-- language -->
+              <div class="d-none d-xl-block">
+                <div class="language-switcher">
+                  <div class="language-switcher-item"><a href="../index.html">JA</a></div>
+                  <div class="language-switcher-item language-switcher-item--current">EN</div>
+                </div>
+              </div>
+              <!-- cart -->
+              <div><span class="my-component-cart-button" data-label-cart="Cart"><a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/request/cart/" class="btn btn-accent btn-sm"><i class="fa-solid fa-cart-shopping pe-1"></i><span class="d-none d-sm-inline-block pe-1">Cart</span><span class="badge bg-secondary text-black">3</span></a></span></div>
+              <!-- account -->
+              <div class="my-auth dropdown dropdown-right"> <a href="#" id="our-userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="my-auth-icon fa-solid fa-circle-user fa-2x d-inline-block mt-1"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="our-userDropdown">
+                  <li><a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/en/user/info" class="my-auth-user-info dropdown-item text-black" style="display: none;"><i class="fa-solid fa-user-gear my-user-menu-icon"></i> User Information</a></li>
+                  <li><a href="#" class="my-auth-button my-auth-button_login dropdown-item text-black"><i class="fa-solid fa-right-to-bracket my-user-menu-icon"></i> Login</a></li>
+                  <li><a href="#" class="my-auth-button my-auth-button_logout dropdown-item text-black" style="display: none;"><i class="fa-solid fa-right-from-bracket my-user-menu-icon"></i> Logout</a></li>
+                </ul>
+                <p id="my-auth-required" style="display:none">false</p>
+                </span> </div>
+            </div>
+            <!-- offcanvas -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title"><img src="../img/logo-en.png" alt="National BioResource Project (NBRP)/KOMUGI"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav">
+                  <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Search strains</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href=https://rcshige4.nig.ac.jp/wheat/komugi/v5/en/strains/search><i class="fa-solid fa-magnifying-glass me-1"></i>Keyword</a></li>
+                      <li><a class="dropdown-item" href=https://rcshige4.nig.ac.jp/wheat/komugi/v5/en/strains/list><i class="fa-solid fa-list me-1"></i>List</a></li>
+                      <li><a class="dropdown-item" href=https://rcshige4.nig.ac.jp/wheat/komugi/v5/en/strains/category><i class="fa-solid fa-book me-1"></i>Strains by category</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/strains/queryFormNbrpPhenotype.jsp><i class="fa-solid fa-magnifying-glass me-1"></i>Selected by phenotype</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/strains/preservationOrganization.jsp><i class="fa-solid fa-book me-1"></i>Selected by institutions</a></li>
+                      <li><a class="dropdown-item" href="http://shigen.nig.ac.jp/wheat/collectionMap/map.html?lang=en" target=_blank rel="noopener noreferrer"><i class="fa-solid fa-map me-1"></i>Collection sites map</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/strains/aboutNbrpMarker.jsp><i class="fa-solid fa-magnifying-glass me-1"></i>Selected by SSR polymorphism</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/strains/nbrpPhenotypeImagesBrowseAction.do><i class="fa-solid fa-camera me-1"></i>Spike images</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/strains/imagesNbrpBrowseAction.do><i class="fa-solid fa-camera me-1"></i>Chromosomes images</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Search cDNA</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/ests/cloneQueryForm.jsp><i class="fa-solid fa-magnifying-glass me-1"></i>Query search</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/ests/tissueBrowse.jsp><i class="fa-solid fa-book me-1"></i>Tissue specific clones</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/ests/contigAllList.jsp><i class="fa-solid fa-book me-1"></i>Contig list</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/blast/blast.jsp><i class="fa-solid fa-magnifying-glass me-1"></i>BLAST</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Order</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href=https://rcshige4.nig.ac.jp/wheat/komugi/v5/en/how-to-order><i class="fa-solid fa-file-lines me-1"></i>How to order</a></li>
+                      <li><a class="dropdown-item" href=https://rcshige4.nig.ac.jp/wheat/komugi/v5/en/notices/2011/1202_1/><i class="fa-solid fa-pencil me-1"></i>MTA samples</a></li>
+                      <li><a class="dropdown-item" href=https://rcshige4.nig.ac.jp/wheat/komugi/v5/en/notices/2019/1001_1/><i class="fa-solid fa-yen-sign me-1"></i>Fees</a></li>
+                    </ul>
+                  </li>
+                  <li class=nav-item><a class="nav-link" href=https://shigen.nig.ac.jp/wheat/komugi/taxonomy/index.jsp>Wheat Taxonomy</a></li>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Research</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/genes/symbolClassList.jsp><i class="fa-solid fa-map-pin me-1"></i>Marker</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/maps/markerMap.jsp><i class="fa-solid fa-location-dot me-1"></i>Composite Wheat Map</a></li>
+                      <li><a class="dropdown-item" href=http://map2.nig.ac.jp/cmap/ target=_blank rel="noopener noreferrer"><i class="fa-solid fa-location-dot me-1"></i>CMap</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/comparative/comparative.jsp><i class="fa-solid fa-signs-post me-1"></i>Comparison with rice and barley</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/array/index.jsp><i class="fa-solid fa-chess-board me-1"></i>Microarray</a></li>
+                      <li><a class="dropdown-item" href=http://shigen.nig.ac.jp/organelle/index.jsp target=_blank rel="noopener noreferrer"><i class="fa-solid fa-certificate me-1"></i>Organelle</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/bac/bac.jsp><i class="fa-solid fa-box me-1"></i>Chinese Spring Genome Sequencing</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Download</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/strains/downloadNbrp.jsp><i class="fa-solid fa-download me-1"></i>Strain</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/array/probe/download.jsp><i class="fa-solid fa-chess-board me-1"></i>Microarray</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/maps/download.jsp><i class="fa-solid fa-location-dot me-1"></i>Composite Wheat Map</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/ests/download.jsp><i class="fa-solid fa-book me-1"></i>cDNA</a></li>
+                      <li><a class="dropdown-item" href=https://shigen.nig.ac.jp/wheat/komugi/genome/download.jsp><i class="fa-solid fa-box me-1"></i>Genome</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item"><a class="nav-link" href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/en/news/">News</a></li>
+                </ul>
+                <!-- for SP -->
+                <div class="d-xl-none d-block d-flex flex-column mt-4 row-gap-3"> 
+                  <!-- search-box -->
+                  <form class="search-box" action=https://www.google.co.jp/search method=get>
+                    <input type="text" name="q" class="search-txt" placeholder="Site search">
+                    <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="hidden" name="ie" value="UTF-8" />
+                    <input type="hidden" name="oe" value="UTF-8">
+                    <input type="hidden" name="hl" value="en">
+                    <input type="hidden" name="sitesearch" value="shigen.nig.ac.jp/wheat/komugi">
+                  </form>
+                  <!-- contact --> 
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8HWIKvY6d5kmfkWMQQOWrFt1zfjbYgKMVXBFSi8TcXIMDBA/viewform" target="_blank" class="btn btn-outline">Contact us<i class="fa-solid fa-up-right-from-square ps-1"></i></a></a>
+                  <div class="d-flex d-row justify-content-center gap-3"> 
+                    <!-- sns-icon --> 
+                    <a href="https://bsky.app/profile/nbrp.bsky.social" target="_blank"><i class="fa-brands fa-bluesky fa-xl our-bluesky-icon"></i></a> 
+                    <!-- language -->
+                    <div class="language-switcher">
+                      <div class="language-switcher-item"><a href="../index.html">JA</a></div>
+                      <div class="language-switcher-item language-switcher-item--current">EN</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- toggle -->
+        <button class="navbar-toggler order-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navibation"> <span class="navbar-toggler-icon"></span> </button>
+      </div>
+    </nav>
+  </header>
+  <!-- home-header -->
+  <div id="home-header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="home-header-image col-12">
+          <div class="container">
+            <div class="row">
+              <div class="home-header-intro col-10 col-xl-8 offset-1 offset-xl-2">
+                <h1><small>National BioResource Project</small><br>
+                  Pathogenic eukaryotic microorganisms</h1>
+                <p>This project is carried out by Chiba University’s Medical Mycology Research Center (pathogenic fungi/actinomycetes) and Nagasaki University’s Institute of Tropical Medicine (pathogenic protozoa). Together, they cooperate in various efforts to support education and research pertaining to infectious diseases and pathogens.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- announcement -->
+  <div class="exsight-announcement">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3"><span class="exsight-announcement-tag">Important Notice</span></div>
+        <div class="col-lg-9">
+          <dl class="news">
+            <dt>October 30, 2025</dt>
+            <dd>
+              <h5>サービス停止のお知らせ</h5>
+              <p>国立遺伝学研究所の施設停電にともないまして、下記の期間サービスを停止させていただきます。<br>
+                2025年11月6日（木）10:00 ～ 11月7日（金）13:00 (JST)</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- main -->
+  <main> 
+    <!-- home-database -->
+    <section class="home-database">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-12">
+                <h2 class="text-center">Database</h2>
+              </div>
+            </div>
+          </div>
+          <div class="cards-wrapper cards-wrapper-bordered">
+            <div class="card" style="grid-row: span 4;">
+              <div class="thumbnail"><span class="text-center fs-4"><img src="../img/icon_strain.png" width="120" height="80"></span></div>
+              <h3 class="card-title text-center">Search Strains</h3>
+              <p>Search from the list organized by type of strain.</p>
+              <span class="button"><a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/en/strains/category/" class="btn btn-accent">Search from the list<i class="fa-solid fa-chevron-right ms-2"></i></a></span> </div>
+            <div class="card" style="grid-row: span 4;">
+              <div class="thumbnail"><span class="text-center fs-4"><img src="../img/icon_cdna.png" width="120" height="80"></span></div>
+              <h3 class="card-title text-center">Search cDNA</h3>
+              <p>You can browse cDNA information grouped by strain and tissue. (Distribution of DNA clones is currently suspended.)</p>
+              <span class="button"><a href="https://shigen.nig.ac.jp/wheat/komugi/ests/tissueBrowse.jsp" target="_blank" class="btn btn-accent">Search cDNA<i class="fa-solid fa-chevron-right ms-2"></i></a></span> </div>
+            <div class="card" style="grid-row: span 4;">
+              <div class="thumbnail"><span class="text-center fs-4"><img src="../img/icon_database.png" width="120" height="80"></span></div>
+              <h3 class="card-title text-center">Download</h3>
+              <p>Downloadable data on strains, cDNA, genome, etc. are available.</p>
+              <span class="button"><a href="https://shigen.nig.ac.jp/wheat/komugi/strains/downloadNbrp.jsp" target="_blank" class="btn btn-accent">Download<i class="fa-solid fa-chevron-right ms-2"></i></a></span> </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- home-search -->
+    <section class="home-search">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="mx-auto bg-light h-100 d-flex align-items-center justify-content-center rounded-3 border border-3 p-3">
+              <div class="col-sm-11 py-4 px-4 mx-auto">
+                <div class="my-component-index-strain-search" data-label-keyword="Keyword search for strains" data-label-keyword-placeholder="Enter Keyword (e.g. KT001-001, Wild species)" data-label-error-contain-only-punctuation="It contains only punctuation. Please enter another word.">
+                  <form>
+                    <div class="mb-4">
+                      <label for="my-component-strain-search-keyword-input" class="col-form-label">Keyword search for strains</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" id="my-component-strain-search-keyword-input" aria-describedby="my-component-strain-search-keyword-help-text" placeholder="Enter Keyword (e.g. KT001-001, Wild species)" value="">
+                        <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-magnifying-glass"></i></button>
+                      </div>
+                      <small id="my-component-strain-search-keyword-help-text" class="form-text text-muted"></small></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-3 mt-md-0"> <a href="https://shigen.nig.ac.jp/wheat/story/" target="_blank"><img src="../img/storyOfWheat_hu_ecae514069a2f994.webp" alt="" class="d-block img-fluid rounded-3 border border-3"></a> </div>
+        </div>
+      </div>
+    </section>
+    <!-- home-overview -->
+    <section class="home-overview">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Project Overview <small>プロジェクトについて</small></h2>
+            <h3>KOMUGIについて</h3>
+            <p>"KOMUGI"はコムギの統合データベースで、1996年にコムギ（<i>Triticum</i>と関連種<i>Aegilops</i>）の遺伝資源に関心の深い日本の研究者有志によって作成されました。<br>
+              KOMUGIの「系統」には木原均博士と氏の同僚が原産地へ遠征して収集した<i>Triticum</i>や<i>Aegilops</i>をはじめ、世界中の科学者によって作出された実験系統やライムギ・エンバクなどの情報が入っています。またゲノム関連情報として遺伝子記号のカタログ情報、ESTクローンおよび遺伝子配列情報なども取り込みました。</p>
+            <p>現在KOMUGIは、2002年に発足した文部科学省：ナショナルバイオリソースプロジェクトにおけるコムギ委員会によって管理されています。<br>
+              <a href="http://www.nbrp.jp/member/wheatMember.jsp" target="_blank"><strong>コムギ委員会</strong></a> は、13機関20人の <a href="http://www.nbrp.jp/member/wheatMember.jsp" target="_blank"><strong>メンバー</strong></a> によって構成されています。委員会活動を通じて、登録系統を整理し、新たな知識情報（系統の染色体構成や表現型（特にイメージデータ）、ゲノム関連情報など）を付加し、&quot;KOMUGI&quot;をより充実したデータベースにしていくつもりです。</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="mt-3">NBRP・コムギは高品質な研究リソースを収集・保存・配布します</h3>
+            <p>2002年発足した文部科学省のナショナルバイオリソースプロジェクト（NBRP:National BioResource Project）の対象生物種としてコムギが採択されて以来、 コムギとその近縁種の種子リソース、DNAリソースの収集・保存・配布を継続してきました。第3期NBRP・コムギの業務はこれまでと同様に、京都大学農学研究科を中核機関、 横浜市立大学木原生物学研究所をサブ機関として実施しています。コムギ研究者並びに関連する専門家で構成する運営委員会が事業の順調な遂行をサポートしています。 また、日本のコムギ研究者グループであるコムギ小委員会からのリソースの整備に関する要望、提言が、運営委員会や事業実施者に直接届く体制が整えられています。</p>
+            <p>第3期NBRP・コムギは、第2期までに収集・保存したコムギとその近縁種の野生種、在来系統および実験系統について保存と配布を継続する他、長期保存体制の確立、 実験系統群の委託システムの確立を行います。新たな有用な実験系統は随時収集・保存していきます。また、同じく第2期までに整備したDNAクローンの保存と配布を継続し、 近年蓄積されつつあるコムギのゲノム情報の整理と発信を目指します。これらのコムギリソースは、コムギリソースのデータベースであるKOMUGIを通じて入手できます。 さらに、第3期NBRP・コムギでは「高度の情報と信頼性を具備したコムギ遺伝資源の整備」を目標に掲げ、所蔵系統に表現型データと遺伝子型データを付与することを進め、 利用者の使いやすいコムギ遺伝資源を提供できるよう事業を進めます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- home-resource -->
+    <section class="home-resource">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-center">Distribution / Deposition / Publication<br>
+              <small>リソースの活用とお願い</small> </h2>
+          </div>
+        </div>
+        <div class="cards-wrapper cards-wrapper-bordered">
+          <div class="card" style="grid-row: span 4;">
+            <div class="thumbnail"> <img src="../img/resource01.png" alt="分譲方法について" width="" height="" /> </div>
+            <h3 class="card-title text-center mt-2">分譲方法について</h3>
+            <p class="description leading-trim">リソースの分譲については、各研究機関にご依頼ください。</p>
+            <p class="button"><a href="../how-to-order.html" class="btn btn-accent">分譲方法について<i class="fa-solid fa-chevron-right ms-2"></i></a></p>
+          </div>
+          <div class="card" style="grid-row: span 4;">
+            <div class="thumbnail"> <img src="../img/resource02.png" alt="" width="" height="" /> </div>
+            <h3 class="card-title text-center mt-2">寄託のお願い</h3>
+            <p class="description leading-trim">研究に用いられた系統を寄託していただければ、大切に保存・管理いたします。</p>
+            <p class="button"><a href="../how-to-order.html" class="btn btn-accent">寄託のお願い<i class="fa-solid fa-chevron-right ms-2"></i></a></p>
+          </div>
+          <div class="card" style="grid-row: span 4;">
+            <div class="thumbnail"> <img src="../img/resource03.png" alt="論文登録のお願い" width="" height="" /> </div>
+            <h3 class="card-title text-center mt-2">論文登録のお願い</h3>
+            <p class="description leading-trim">リソースを利用して成果があがりましたら、成果論文の登録をお願いいたします。</p>
+            <p class="button"><a href="../how-to-order.html" class="btn btn-accent">論文登録のお願い<i class="fa-solid fa-chevron-right ms-2"></i></a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- home-news -->
+    <section class="home-news">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2><i class="fa-solid fa-circle-info"></i> Notice <small>重要なお知らせ</small></h2>
+            <div class="news-wrapper">
+              <div class="list-group list-group-flush"> <a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/notices/2021/0628_1/" class="list-group-item list-group-item-action">
+                <div class="our-post-meta our-post-meta-date"><i class="fa-solid fa-calendar-days"></i>
+                  <time datetime="2021-06-28T10:00:00+09:00">2021年06月28日</time>
+                </div>
+                <span class="mt-1">リソース提供の再開 </span></a> <a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/notices/2019/1001_1/" class="list-group-item list-group-item-action">
+                <div class="our-post-meta our-post-meta-date"><i class="fa-solid fa-calendar-days"></i>
+                  <time datetime="2019-10-01T10:00:00+09:00">2019年10月01日</time>
+                </div>
+                <span class="mt-1">配布手数料の改正 </span></a> <a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/notices/2017/0327_1/" class="list-group-item list-group-item-action">
+                <div class="our-post-meta our-post-meta-date"><i class="fa-solid fa-calendar-days"></i>
+                  <time datetime="2017-03-27T10:00:00+09:00">2017年03月27日</time>
+                </div>
+                <span class="mt-1">DNAクローンの配布を停止</span></a> </div>
+            </div>
+            <div class="mb-3"><a href="news.html" class="btn btn-outline">重要なお知らせ一覧へ<i class="fa-solid fa-chevron-right ms-2"></i></a></div>
+          </div>
+          <div class="col-lg-6">
+            <h2><i class="fa-solid fa-lightbulb"></i> News <small>お知らせ</small></h2>
+            <div class="news-wrapper">
+              <div class="list-group list-group-flush"> <a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/news/2025/0710_1/" class="list-group-item list-group-item-action">
+                <div class="our-post-meta our-post-meta-date"><i class="fa-solid fa-calendar-days"></i>
+                  <time datetime="2025-07-10T07:35:31Z">2025年07月10日</time>
+                </div>
+                <span class="mt-1">MSD系統の追加 </span></a> <a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/news/2024/0613_1/" class="list-group-item list-group-item-action">
+                <div class="our-post-meta our-post-meta-date"><i class="fa-solid fa-calendar-days"></i>
+                  <time datetime="2024-06-13T00:00:59Z">2024年06月13日</time>
+                </div>
+                <span class="mt-1">「田中正武研究資料, 1929-1997」公開記念展 を開催します </span></a> <a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/news/2023/1208_1/" class="list-group-item list-group-item-action">
+                <div class="our-post-meta our-post-meta-date"><i class="fa-solid fa-calendar-days"></i>
+                  <time datetime="2023-12-08T10:00:00+09:00">2023年12月08日</time>
+                </div>
+                <span class="mt-1">系統の更新 (六倍体コアコレクション、Kronos) </span></a> <a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/news/2023/0915_2/" class="list-group-item list-group-item-action">
+                <div class="our-post-meta our-post-meta-date"><i class="fa-solid fa-calendar-days"></i>
+                  <time datetime="2023-09-15T10:00:00+09:00">2023年09月15日</time>
+                </div>
+                <span class="mt-1">コムギと近縁野生種の分類講習会 </span></a> <a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/news/2023/0915_1/" class="list-group-item list-group-item-action">
+                <div class="our-post-meta our-post-meta-date"><i class="fa-solid fa-calendar-days"></i>
+                  <time datetime="2023-09-15T10:00:00+09:00">2023年09月15日</time>
+                </div>
+                <span class="mt-1">コムギ国際シンポジウムと関連展示</span></a> </div>
+            </div>
+            <div><a href="news.html" class="btn btn-outline">お知らせ一覧へ<i class="fa-solid fa-chevron-right ms-2"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div id="top-footer">
+      <div class="container">
+        <div class="footer-contact">
+          <div class="row d-flex flex-column flex-lg-row">
+            <div class="col-lg-8">
+              <h2>Contact <small>お問い合わせ</small></h2>
+              <div class="card contact-komugi border-0">
+                <div class="card-body">
+                  <h3 class="card-title">NBRP KOMUGI お問い合わせフォーム</h3>
+                  <h4><a href="https://docs.google.com/forms/d/e/1FAIpQLSe8HWIKvY6d5kmfkWMQQOWrFt1zfjbYgKMVXBFSi8TcXIMDBA/viewform" target="_blank">Google フォーム <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h4>
+                  <p class="card-text">皆さまからのご意見、ご要望をお待ちしております。</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 exsight-component-social-bluesky-timeline">
+              <h2><i class="fa-brands fa-bluesky"></i> Bluesky</h2>
+              <script src="https://blueskytimeline.com/timeline.js" async data-handle="nbrp.bsky.social" data-theme="light" data-width="100%" data-height="auto" data-lang="ja" data-ui="0" data-prof="0" data-pin="0" data-rp="0" data-thread="0"></script> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="middle-footer">
+      <div class="container">
+        <div class="footer-banner">
+          <div><a href="https://nbrp.jp/" target="_blank"><img src="../img/nbrp_logo_hu_ea281a73581ab228.webp" width="auto" height="50"></a></div>
+          <div><a href="https://www.mext.go.jp/" target="_blank"><img src="../img/mext_logo_hu_ddb894b383107a3c.webp" width="auto" height="50"></a></div>
+          <div><a href="https://www.kyoto-u.ac.jp/ja" target="_blank"><img src="../img/kyoto_u_logo.webp" width="auto" height="50"></a></div>
+          <div><a href="https://www.yokohama-cu.ac.jp/" target="_blank"><img src="../img/ycu_logo_mihon_hu_c440da127a5c6375.webp" width="auto" height="50"></a></div>
+          <div><a href="https://www.nig.ac.jp/nig/ja/" target="_blank"><img src="../img/nig_logo_hu_379223ae8ac45688.webp" width="auto" height="50"></a></div>
+        </div>
+      </div>
+    </div>
+    <div id="bottom-footer">
+      <div class="container">
+        <div class="footer-menu border-bottom-0">
+          <div>
+            <h5><i class="fa-solid fa-house me-1"></i>Home</h5>
+            <ul class="list">
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/strains/aboutNbrp.jsp">About NBRP Strains</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/colleagues/colleagues.jsp">KOMUGI DB working</a></li>
+              <li><a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/en/how-to-order">How to order</a></li>
+              <li><a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/en/notices/2011/1202_1/">MTA Samples</a></li>
+              <li><a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/en/notices/2019/1001_1/">Fees</a></li>
+              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfupXtY6S6AuwMybT4dt4mohoUu-RVuTVz3tA7Xtj_6B9MGlQ/viewform" target="_blank" rel="noopener noreferrer">Contact us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-magnifying-glass me-1"></i>Strain search</h5>
+            <ul class="list">
+              <li><a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/en/strains/search/">Keyword</a></li>
+              <li><a href="https://rcshige4.nig.ac.jp/wheat/komugi/v5/en/strains/category/">Strains by category</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/strains/queryFormNbrpPhenotype.jsp">Selected by phenotype</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/strains/preservationOrganization.jsp">Selected by institutions</a></li>
+              <li><a href="http://shigen.nig.ac.jp/wheat/collectionMap/map.html?lang=en" target="_blank" rel="noopener noreferrer">Collection sites map</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/strains/aboutNbrpMarker.jsp">Selected by SSR polymorphism</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/strains/nbrpPhenotypeImagesBrowseAction.do">Spike images</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/strains/imagesNbrpBrowseAction.do">Chromosome images</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-magnifying-glass me-1"></i>cDNA search</h5>
+            <ul class="list">
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/ests/cloneQueryForm.jsp">Keyword</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/ests/contigAllList.jsp">Contig list</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/ests/tissueBrowse.jsp">Tissue specific clones</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/blast/blast.jsp">BLAST</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-clipboard-list me-1"></i>Other contents</h5>
+            <ul class="list">
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/genes/symbolClassList.jsp">Gene Catalogue</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/genes/markerQueryForm.jsp">Marker Query Form</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/genes/markerClassList.jsp">Marker Class list</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/about/norin61GenomeSequence.jsp">Blast Norin 61</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/maps/markerMap.jsp">Composite wheat map</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/comparative/comparative.jsp">Comparison with rice and barley</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/array/index.jsp">Microarray</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/maps/rflpAbout.jsp">RFLP Map</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/bac/bac.jsp">Chinese Spring Genome Sequencing</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-menu">
+          <div>
+            <h5><i class="fa-solid fa-user-graduate me-1"></i>For professionals</h5>
+            <ul class="list">
+              <li><a href="https://rrc.nbrp.jp/gatewayAction.do?speciesId=13&amp;target=Entry" target="_blank" rel="noopener noreferrer">Submit reference</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/request/nbrpStrainDepositionAction.do">Deposition</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/taxonomy/index.jsp">Wheat Taxonomy</a></li>
+              <li><a href="https://shigen.nig.ac.jp/ewis/index.jsp" target="_blank" rel="noopener noreferrer">eWIS</a></li>
+              <li><a href="https://mail.shigen.info/mailman/listinfo/mugi-net" target="_blank" rel="noopener noreferrer">mugi-net</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-user me-1"></i>For the public</h5>
+            <ul class="list">
+              <li><a href="https://shigen.nig.ac.jp/wheat/story/" target="_blank" rel="noopener noreferrer">Story of wheat</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/video/video.jsp">How to observe chromosomes</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/chromosomes/chromosomes.jsp">Chromosomes images</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/ziho/seikenzihoList.jsp">Seiken Ziho</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-arrow-up-right-from-square me-1"></i>External Links</h5>
+            <ul class="list">
+              <li><a href="https://map2.nig.ac.jp/cmap/" target="_blank" rel="noopener noreferrer">CMap</a></li>
+              <li><a href="https://shigen.nig.ac.jp/dnadb/index.jsp" target="_blank" rel="noopener noreferrer">DNA Sequence DB</a></li>
+              <li><a href="https://shigen.nig.ac.jp/organelle/index.jsp" target="_blank" rel="noopener noreferrer">Organelle</a></li>
+              <li><a href="http://shigen.nig.ac.jp/shigen/tool/tool.jsp" target="_blank" rel="noopener noreferrer">Tools</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wgr/top/top.jsp" target="_blank" rel="noopener noreferrer">Worldwide Genetic Resources</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-file-arrow-down me-1"></i>Download</h5>
+            <ul class="list">
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/strains/downloadNbrp.jsp">Strain</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/array/probe/download.jsp">Microarray</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/maps/download.jsp">Composite Wheat Map</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/ests/download.jsp">cDNA</a></li>
+              <li><a href="https://shigen.nig.ac.jp/wheat/komugi/genome/download.jsp">Genome</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div>
+            <h3><small>National BioResource Project (NBRP)</small><br>
+              KOMUGI</h3>
+            <p class="copyright">&copy; Shigen All rights reserved.</p>
+          </div>
+          <div><a href="https://bsky.app/profile/nbrp.bsky.social" target="_blank"><i class="fa-brands fa-bluesky fa-2x"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Scroll Top -->
+  <div id="back-top" style="display: none;"><a href="#"><i class="fa fa-chevron-up"></i></a></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+<script type="text/javascript" src="../js/exsight.js"></script>
+</body>
+</html>
